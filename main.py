@@ -39,11 +39,11 @@ def play_game():
     run_me = True
 
     # circle
-    colorcircle = red
+    colorcircle = RED
     posx = 300
     posy = 200
 
-    other_colorcircle = white
+    other_colorcircle = WHITE
     o_posx = 100
     o_posy = 200
 
@@ -69,10 +69,10 @@ def play_game():
                     posy -= 10
 
         # fill the screen with black (otherwise, the circle will leave a trail)
-        screen.fill(black)
+        SCREEN.fill(BLACK)
 
-        circle = pygame.draw.circle(screen, colorcircle, (posx, posy), 50)
-        pygame.draw.circle(screen, other_colorcircle, (o_posx, o_posy), 50)
+        circle = pygame.draw.circle(SCREEN, colorcircle, (posx, posy), 50)
+        pygame.draw.circle(SCREEN, other_colorcircle, (o_posx, o_posy), 50)
 
         pygame.display.flip()
 

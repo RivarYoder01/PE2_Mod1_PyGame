@@ -22,7 +22,7 @@ BLUE = (0, 0, 255)
 WHITE = (255, 255, 255)
 YELLOW = (255, 255, 0)
 
-SCREEN_SIZE = 800
+SCREEN_SIZE = 700
 SCREEN = pygame.display.set_mode((SCREEN_SIZE, SCREEN_SIZE))
 
 game = {
@@ -102,7 +102,7 @@ def play_game():
         pygame.draw.circle(SCREEN, game["hidden_color"], (game["hidden_x"], game["hidden_y"]), 50)
 
         game_stats()
-
+        set_circle_color()
 
         pygame.display.flip()
 
@@ -136,6 +136,33 @@ def game_stats():
 
     line = font.render('# ' + str(game["num_moves"]) + " moves", True, YELLOW)
     SCREEN.blit(line, (20, 20))
+
+    return
+
+
+def set_circle_color():
+    global game
+
+    overlap = game['circle_size'] * 2 - 10
+
+    if abs(game['user_x'] - game['hidden_x']) < overlap and abs(game['user_y'] - game['hidden_y']) < overlap:
+        hidden_color = YELLOW
+        user_color = GREEN
+    else:
+        if game['prev_x'] != game['user_x']:
+            if abs(game['prev_x'] - game['hidden_x']) > abs(game['user_x'] - game['hidden_x']):
+                user_color = RED
+            else:
+                user_color = BLUE
+
+        if game['prev_y'] != game['user_y']:
+            if abs(game['prev_y'] - game['hidden_y']) > abs(game['user_y'] - game['hidden_y']):
+                user_color = RED
+            else:
+                user_color = BLUE
+
+    prev_x = game['user_x']
+    prev_y = game['user_y']
 
     return
 

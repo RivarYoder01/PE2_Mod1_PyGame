@@ -23,12 +23,22 @@ YELLOW = (255, 255, 0)
 SCREEN_SIZE = screen_width, screen_height = 600, 400
 SCREEN = pygame.display.set_mode(SCREEN_SIZE)
 
+game = {
+    'circle_size': 50,
+    'move_size': 50,
+    'prev_x': 0,
+    'prev_y': 0,
+    'user_x': SCREEN_SIZE,
+    'user_y': SCREEN_SIZE,
+    'hidden_x': 0,
+    'hidden_y': 0,
+    'user_color': WHITE,
+    'hidden_color': BLACK,
+    'num_moves': 0
+}
+
 # clock = pygame.time.Clock()
 fps_limit = 60
-
-global game
-
-
 
 
 def play_game():
@@ -67,6 +77,12 @@ def play_game():
 
                 if event.key == pygame.K_UP:
                     posy -= 10
+
+                if event.key == pygame.K_d:
+                    if other_colorcircle == BLACK:
+                        other_colorcircle = WHITE
+                    else:
+                        other_colorcircle = BLACK
 
         # fill the screen with black (otherwise, the circle will leave a trail)
         SCREEN.fill(BLACK)

@@ -13,8 +13,6 @@ __version__ = '1.0'
 __date__ = '2/18/2024'
 __status__ = 'Development'
 
-# from pygame import event
-
 BLACK = (0, 0, 0)
 RED = (255, 0, 0)
 GREEN = (0, 255, 0)
@@ -36,7 +34,7 @@ game = {
     'hidden_y': 0,
     'user_color': WHITE,
     'hidden_color': BLACK,
-    'num_moves': 0
+    'num_moves': 0,
 }
 
 # clock = pygame.time.Clock()
@@ -50,15 +48,6 @@ def play_game():
 
     run_me = True
 
-    # circle
-    colorcircle = RED
-    posx = 300
-    posy = 200
-
-    #  other_colorcircle = WHITE
-    #  o_posx = 100
-    #  o_posy = 200
-
     rand_location()
 
     while run_me:
@@ -71,19 +60,19 @@ def play_game():
 
             if event.type == pygame.KEYDOWN:
                 if event.key == pygame.K_LEFT:
-                    posx -= 10
+                    game['user_x'] -= 10
                     game["num_moves"] += 1
 
                 if event.key == pygame.K_RIGHT:
-                    posx += 10
+                    game['user_x'] += 10
                     game["num_moves"] += 1
 
                 if event.key == pygame.K_DOWN:
-                    posy += 10
+                    game['user_y'] += 10
                     game["num_moves"] += 1
 
                 if event.key == pygame.K_UP:
-                    posy -= 10
+                    game['user_y'] -= 10
                     game["num_moves"] += 1
 
                 if event.key == pygame.K_d:
@@ -98,7 +87,7 @@ def play_game():
         # fill the screen with black (otherwise, the circle will leave a trail)
         SCREEN.fill(BLACK)
 
-        circle = pygame.draw.circle(SCREEN, colorcircle, (posx, posy), 50)
+        game['circle'] = pygame.draw.circle(SCREEN, game['user_color'], (game['user_x'], game['user_y']), 50)
         pygame.draw.circle(SCREEN, game["hidden_color"], (game["hidden_x"], game["hidden_y"]), 50)
 
         game_stats()
@@ -133,8 +122,8 @@ def game_stats():
     global game
 
     font = pygame.font.SysFont(None, 24)
+    line = font.render('# ' + str(game["num_moves"]) + " moves" + " | Debug = D" + " | Reset = R", True, BLUE)
 
-    line = font.render('# ' + str(game["num_moves"]) + " moves", True, YELLOW)
     SCREEN.blit(line, (20, 20))
 
     return
@@ -146,23 +135,23 @@ def set_circle_color():
     overlap = game['circle_size'] * 2 - 10
 
     if abs(game['user_x'] - game['hidden_x']) < overlap and abs(game['user_y'] - game['hidden_y']) < overlap:
-        hidden_color = YELLOW
-        user_color = GREEN
+        game['hidden_color'] = WHITE
+        game['user_color'] = GREEN
     else:
         if game['prev_x'] != game['user_x']:
             if abs(game['prev_x'] - game['hidden_x']) > abs(game['user_x'] - game['hidden_x']):
-                user_color = RED
+                game['user_color'] = RED
             else:
-                user_color = BLUE
+                game['user_color'] = BLUE
 
         if game['prev_y'] != game['user_y']:
             if abs(game['prev_y'] - game['hidden_y']) > abs(game['user_y'] - game['hidden_y']):
-                user_color = RED
+                game['user_color'] = RED
             else:
-                user_color = BLUE
+                game['user_color'] = BLUE
 
-    prev_x = game['user_x']
-    prev_y = game['user_y']
+    game['prev_x'] = game['user_x']
+    game['prev_y'] = game['user_y']
 
     return
 

@@ -5,7 +5,7 @@ DOCSTRING
 """
 
 import pygame
-import pygame.mixer
+import pygame_menu
 import random
 
 __author__ = 'Rivar Yoder | Andrew Hunhoff'
@@ -39,6 +39,13 @@ game = {
 
 # clock = pygame.time.Clock()
 fps_limit = 60
+
+
+def set_difficulty():
+    """
+
+    :return:
+    """
 
 
 def play_game():
@@ -160,12 +167,12 @@ def main():
     """ ... """
 
     pygame.init()
-    pygame.display.set_caption('Hot and Cold Game 0.0')
 
-    play_game()
-
-    pygame.quit()
-
+    menu = pygame_menu.Menu('Hot and Cold Game /(^o^)/', 400, 300, theme=pygame_menu.themes_RED)
+    menu.add.slector('Difficulty :', [('Level 1', 1), ('Level 2', 2), ('Level 3', 3)], onchange=set_difficulty)
+    menu.add.button('Play', play_game)
+    menu.add.button('Quit', pygame_menu.events.EXIT)
+    menu.mainloop(game['SCREEN'])
 
 if __name__ == '__main__':
     main()

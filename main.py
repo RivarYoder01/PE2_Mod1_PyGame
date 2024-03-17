@@ -168,11 +168,12 @@ def main():
 
     pygame.init()
 
-    menu = pygame_menu.Menu('Hot and Cold Game /(^o^)/', 400, 300, theme=pygame_menu.themes_RED)
+    menu = pygame_menu.Menu('Hot and Cold Game /(^o^)/', 400, 300, theme=pygame_menu.themes_BLUE)
     menu.add.slector('Difficulty :', [('Level 1', 1), ('Level 2', 2), ('Level 3', 3)], onchange=set_difficulty)
     menu.add.button('Play', play_game)
     menu.add.button('Quit', pygame_menu.events.EXIT)
     menu.mainloop(game['SCREEN'])
+
 
 if __name__ == '__main__':
     main()

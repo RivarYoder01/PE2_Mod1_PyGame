@@ -7,6 +7,7 @@ DOCSTRING
 import pygame
 import pygame_menu
 import random
+from pygame import mixer
 
 __author__ = 'Rivar Yoder | Andrew Hunhoff'
 __version__ = '1.0'
@@ -41,11 +42,30 @@ game = {
 fps_limit = 60
 
 
-def set_difficulty():
+def set_difficulty(level, difficulty):
     """
 
     :return:
     """
+    global game
+
+    if difficulty == 3:
+        game['circle_size'], game['move_size'] = (10, 10)
+    elif difficulty == 2:
+        game['circle_size'], game['move_size'] = (25, 25)
+    else:
+        game['circle_size'], game['move_size'] = (50, 50)
+
+    return
+
+
+def play_music():
+    pygame.mixer.init()
+    pygame.mixer.music.load('Wallpaper.mp3')
+    pygame.mixer.music.set_volume(0.5)
+    pygame.mixer.music.play(loops=-1)
+
+    return
 
 
 def play_game():
@@ -162,17 +182,18 @@ def set_circle_color():
 
     return
 
-
 def main():
     """ ... """
 
+    play_music()
+
     pygame.init()
 
-    menu = pygame_menu.Menu('Hot and Cold Game /(^o^)/', 400, 300, theme=pygame_menu.themes_BLUE)
-    menu.add.slector('Difficulty :', [('Level 1', 1), ('Level 2', 2), ('Level 3', 3)], onchange=set_difficulty)
+    menu = pygame_menu.Menu('Hot and Cold Game /(^o^)/', 400, 300, theme=pygame_menu.themes.THEME_BLUE)
+    menu.add.selector('Difficulty :', [('Level 1', 1), ('Level 2', 2), ('Level 3', 3)], onchange=set_difficulty)
     menu.add.button('Play', play_game)
     menu.add.button('Quit', pygame_menu.events.EXIT)
-    menu.mainloop(game['SCREEN'])
+    menu.mainloop(SCREEN)
 
 
 if __name__ == '__main__':

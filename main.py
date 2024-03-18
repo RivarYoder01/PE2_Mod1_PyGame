@@ -1,12 +1,23 @@
 #!/user.bin.env python3
 
 """
-The user is presented with a menu to choose the level of difficulty, and option to start the game, and an option to quit
+The user is presented with music and a menu to choose the level of difficulty, an option to start the game, and an option to quit
 circle they must navigate to find a hidden circle. Their circle will change between red and blue depending on if
 they are moving closer or further away from the hidden circle
 
 There is a debug key (d) that turns the hidden circle visible (White) and a reset key (r) that relocates the hidden
 circle
+
+The game is won when the user puts their circle close enough to the hidden circle that they overlap
+
+Functions in order OF USE:
+    main()
+    set_difficulty()
+    play_music()
+    play_game()
+    rand_location()
+    game_stats()
+    set_circle_color
 """
 
 import pygame  # Draws circle and runs the game
@@ -224,7 +235,13 @@ def set_circle_color():
 
 
 def main():
-    """ ... """
+    """
+    Begins playing music and presents the user with a menu:
+        Choose difficulty between Level 1, Level 2, and Level 3
+        Play the game, runs play_game()
+        Quit, exits the program
+    :return:
+    """
 
     play_music()
 

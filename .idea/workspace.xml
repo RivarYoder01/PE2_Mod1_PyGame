@@ -4,10 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d9b6ef64-32ef-44d1-9e11-b2da10df1a5f" name="Changes" comment="coded the menu">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
-    </list>
+    <list default="true" id="d9b6ef64-32ef-44d1-9e11-b2da10df1a5f" name="Changes" comment="Added comments and docstrings" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -109,7 +106,15 @@
       <option name="project" value="LOCAL" />
       <updated>1710634483367</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="coded the menu">
+      <option name="closed" value="true" />
+      <created>1710794029381</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1710794029381</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -117,6 +122,7 @@
     <MESSAGE value="Added in color changeing function base code, code needs to be made fuctional" />
     <MESSAGE value="Made set_circle_Color functional" />
     <MESSAGE value="coded the menu" />
-    <option name="LAST_COMMIT_MESSAGE" value="coded the menu" />
+    <MESSAGE value="Added comments and docstrings" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added comments and docstrings" />
   </component>
 </project>

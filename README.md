@@ -8,15 +8,16 @@ There is a debug key (d) that turns the hidden circle visible (White) and a rese
 circle
 
 The game is won when the user puts their circle close enough to the hidden circle that they overlap
+
 ‐------------------‐---------
 ### **Functions in order OF USE:**
-main()
-set_difficulty()
-play_music()
-play_game()
-rand_location()
-game_stats()
-set_circle_color()
+* main()
+* set_difficulty()
+* play_music()
+* play_game()
+* rand_location()
+* game_stats()
+* set_circle_color()
 
 ### **What was Learned:**
 * Use of Pygame, Pygame_Menu, and Random

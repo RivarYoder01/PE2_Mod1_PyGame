@@ -58,30 +58,31 @@ fps_limit = 60  # Shows how often an event happens
 
 def set_difficulty(level, difficulty):
     """
-
+    Takes the user's chosen difficulty setting and changes the distance moved per key press
     :return:
     """
     global game
 
-    if difficulty == 3:
+    if difficulty == 3:  # hardest difficulty - least movement per press
         game['circle_size'], game['move_size'] = (10, 10)
-    elif difficulty == 2:
+    elif difficulty == 2:  # medium difficulty - a little more movement per key press
         game['circle_size'], game['move_size'] = (25, 25)
-    else:
+    else:  # base difficulty - original move size
         game['circle_size'], game['move_size'] = (50, 50)
 
     return
 
 
 def play_music():
-    '''
-
+    """
+    Makes music play while the program is running
     :return:
-    '''
+    """
+
     pygame.mixer.init()
-    pygame.mixer.music.load('Wallpaper.mp3')
-    pygame.mixer.music.set_volume(0.5)
-    pygame.mixer.music.play(loops=-1)
+    pygame.mixer.music.load('Wallpaper.mp3')  # loads the chosen music file
+    pygame.mixer.music.set_volume(0.25)  # sets volume for playing music
+    pygame.mixer.music.play(loops=-1)  # makes music loop continuously
 
     return
 
@@ -154,21 +155,28 @@ def play_game():
 
 
 def rand_location():
+    """
+    randomly generates the position of the hidden circle the user  is trying to find
+    :return:
+    """
     global game
 
-    user_pos = SCREEN_SIZE / 2
+    user_pos = SCREEN_SIZE / 2  # center of the screen
 
-    inside_dist = game["circle_size"]
-    outside_dist = SCREEN_SIZE - game["circle_size"]
+    inside_dist = game["circle_size"]  # makes sure the hidden circle is not touching the user circle
+    outside_dist = SCREEN_SIZE - game["circle_size"]  # stops the hidden circle from touching the edge of the screen
 
-    right_user_dist = user_pos - game["circle_size"]
-    left_user_dist = user_pos + game["circle_size"]
+    right_user_dist = user_pos - game["circle_size"]  # makes sure it is at least one circle away on the right
+    left_user_dist = user_pos + game["circle_size"]  # makes sure it is at least one circle away on the left
 
+    # continues looping until a valid position is achieved
     while True:
 
+        # the hidden location is not in the center with the user circle and is also  not off screen
         x = random.randint(inside_dist, outside_dist)
         y = random.randint(inside_dist, outside_dist)
 
+        # makes sure the hidden circle is not near the user circle
         if (x < right_user_dist or x > left_user_dist) and (y < right_user_dist or y > left_user_dist):
             game["hidden_x"] = x
             game["hidden_y"] = y
@@ -177,12 +185,14 @@ def rand_location():
 
 def game_stats():
     """
-
+    Adds text to program screen with Number of moves, debug key and reset key. It shows how many moves have been made
+    and what keys to press for the debug mode and to reset the hidden circle location
     :return:
     """
     global game
 
-    font = pygame.font.SysFont(None, 24)
+    font = pygame.font.SysFont(None, 24)  # sets size and font of on-screen text
+    # sets shown text and color of text
     line = font.render('# ' + str(game["num_moves"]) + " moves" + " | Debug = D" + " | Reset = R", True, BLUE)
 
     SCREEN.blit(line, (20, 20))

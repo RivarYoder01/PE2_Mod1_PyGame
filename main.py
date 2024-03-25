@@ -18,6 +18,8 @@ Functions in order OF USE:
     rand_location()
     game_stats()
     set_circle_color
+
+Github URL: https://github.com/RivarYoder01/PE2_Mod1_PyGame/blob/master/main.py
 """
 
 import pygame  # Draws circle and runs the game

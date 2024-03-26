@@ -22,10 +22,10 @@ Functions in order OF USE:
 Github URL: https://github.com/RivarYoder01/PE2_Mod1_PyGame/blob/master/main.py
 """
 
+import random  # Used to randomize the location
 import pygame  # Draws circle and runs the game
 import pygame_menu  # Gives the user a menu to pick a difficulty and start the game
-import random  # Used to randomize the location
-from pygame import mixer
+
 
 __author__ = 'Rivar Yoder | Andrew Hunhoff'
 __version__ = '1.0'

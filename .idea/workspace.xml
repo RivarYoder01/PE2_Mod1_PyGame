@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d9b6ef64-32ef-44d1-9e11-b2da10df1a5f" name="Changes" comment="Moved code out of onedrive, making sure pushing and pulling still works">
+    <list default="true" id="d9b6ef64-32ef-44d1-9e11-b2da10df1a5f" name="Changes" comment="Got pygame_menu working on my end, recorded game working. Some corrections to doc strings (return: None) and comments">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
     </list>
@@ -138,7 +138,15 @@
       <option name="project" value="LOCAL" />
       <updated>1711466759105</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Got pygame_menu working on my end, recorded game working. Some corrections to doc strings (return: None) and comments">
+      <option name="closed" value="true" />
+      <created>1711477173007</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1711477173007</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -149,6 +157,7 @@
     <MESSAGE value="Added comments and docstrings" />
     <MESSAGE value="Added Gitub URL" />
     <MESSAGE value="Moved code out of onedrive, making sure pushing and pulling still works" />
-    <option name="LAST_COMMIT_MESSAGE" value="Moved code out of onedrive, making sure pushing and pulling still works" />
+    <MESSAGE value="Got pygame_menu working on my end, recorded game working. Some corrections to doc strings (return: None) and comments" />
+    <option name="LAST_COMMIT_MESSAGE" value="Got pygame_menu working on my end, recorded game working. Some corrections to doc strings (return: None) and comments" />
   </component>
 </project>

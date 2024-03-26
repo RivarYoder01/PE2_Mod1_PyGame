@@ -199,7 +199,7 @@ def game_stats():
 
     font = pygame.font.SysFont(None, 24)  # sets size and font of on-screen text
     # sets shown text and color of text
-    line = font.render('# ' + str(game["num_moves"]) + " moves" + " | Debug = D" + " | Reset = R", True, BLUE)
+    line = font.render('# ' + str(game["num_moves"]) + " moves" + " | Debug = D" + " | Reset = R", True, RED)
 
     SCREEN.blit(line, (20, 20))
 

@@ -4,8 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d9b6ef64-32ef-44d1-9e11-b2da10df1a5f" name="Changes" comment="Added Gitub URL">
+    <list default="true" id="d9b6ef64-32ef-44d1-9e11-b2da10df1a5f" name="Changes" comment="Moved code out of onedrive, making sure pushing and pulling still works">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -27,15 +28,15 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Python.main.executor": "Run",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "master",
-    "last_opened_file_path": "C:/Users/alyss/Downloads/PE2_Mod1_PyGame"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Python.main.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/alyss/Downloads/PE2_Mod1_PyGame&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\Andrew Hunhoff\PycharmProjects\PE2_Mod1_PyGame" />
@@ -129,7 +130,15 @@
       <option name="project" value="LOCAL" />
       <updated>1711331666528</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Moved code out of onedrive, making sure pushing and pulling still works">
+      <option name="closed" value="true" />
+      <created>1711466759105</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1711466759105</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -139,6 +148,7 @@
     <MESSAGE value="coded the menu" />
     <MESSAGE value="Added comments and docstrings" />
     <MESSAGE value="Added Gitub URL" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added Gitub URL" />
+    <MESSAGE value="Moved code out of onedrive, making sure pushing and pulling still works" />
+    <option name="LAST_COMMIT_MESSAGE" value="Moved code out of onedrive, making sure pushing and pulling still works" />
   </component>
 </project>

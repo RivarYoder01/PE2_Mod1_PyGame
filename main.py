@@ -1,9 +1,9 @@
 #!/user.bin.env python3
 
 """
-The user is presented with music and a menu to choose the level of difficulty, an option to start the game, and an option to quit
-circle they must navigate to find a hidden circle. Their circle will change between red and blue depending on if
-they are moving closer or further away from the hidden circle
+The user is presented with music and a menu to choose the level of difficulty, an option to start the game,
+and an option to quit. They must navigate a circle to find a hidden circle. Their circle will change between red and blue
+depending on if they are moving closer or further away from the hidden circle
 
 There is a debug key (d) that turns the hidden circle visible (White) and a reset key (r) that relocates the hidden
 circle
@@ -19,7 +19,7 @@ Functions in order OF USE:
     game_stats()
     set_circle_color
 
-Github URL: https://github.com/RivarYoder01/PE2_Mod1_PyGame/blob/master/main.py
+GitHub URL: https://github.com/RivarYoder01/PE2_Mod1_PyGame/blob/master/main.py
 """
 
 import random  # Used to randomize the location
@@ -61,7 +61,8 @@ fps_limit = 60  # Shows how often an event happens
 def set_difficulty(level, difficulty):
     """
     Takes the user's chosen difficulty setting and changes the distance moved per key press
-    :return:
+
+    :return: None
     """
     global game
 
@@ -78,7 +79,8 @@ def set_difficulty(level, difficulty):
 def play_music():
     """
     Makes music play while the program is running
-    :return:
+
+    :return: None
     """
 
     pygame.mixer.init()
@@ -159,7 +161,8 @@ def play_game():
 def rand_location():
     """
     randomly generates the position of the hidden circle the user  is trying to find
-    :return:
+
+    :return: None
     """
     global game
 
@@ -174,7 +177,7 @@ def rand_location():
     # continues looping until a valid position is achieved
     while True:
 
-        # the hidden location is not in the center with the user circle and is also  not off screen
+        # the hidden location is not in the center with the user circle and is also  not off-screen
         x = random.randint(inside_dist, outside_dist)
         y = random.randint(inside_dist, outside_dist)
 
@@ -189,7 +192,8 @@ def game_stats():
     """
     Adds text to program screen with Number of moves, debug key and reset key. It shows how many moves have been made
     and what keys to press for the debug mode and to reset the hidden circle location
-    :return:
+
+    :return: None
     """
     global game
 
@@ -213,7 +217,7 @@ def set_circle_color():
 
     Then user_x and user_y will replace prev_x and prev_y to be compared once again when the function is called again
 
-    :return:
+    :return: None
     """
     global game
 
@@ -249,19 +253,21 @@ def set_circle_color():
 def main():
     """
     Begins playing music and presents the user with a menu:
-        Choose difficulty between Level 1, Level 2, and Level 3
+        Choose difficulty between Level 1, Level 2, and Level 3, runs set_difficulty
         Play the game, runs play_game()
         Quit, exits the program
-    :return:
+
+    :return: None
     """
 
     play_music()
 
     pygame.init()
 
-    menu = pygame_menu.Menu('Hot and Cold Game /(^o^)/', 400, 300, theme=pygame_menu.themes.THEME_BLUE)
+    menu = pygame_menu.Menu('Hot and Cold Game /(^o^)/', 550, 300, theme=pygame_menu.themes.THEME_BLUE)
+    # Calls set_difficulty to choose how difficult the game is
     menu.add.selector('Difficulty :', [('Level 1', 1), ('Level 2', 2), ('Level 3', 3)], onchange=set_difficulty)
-    menu.add.button('Play', play_game)
+    menu.add.button('Play', play_game)  # Starts game
     menu.add.button('Quit', pygame_menu.events.EXIT)
     menu.mainloop(SCREEN)
 
